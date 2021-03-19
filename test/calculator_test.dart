@@ -60,5 +60,11 @@ void main() {
       final calculator = Calculator();
       expect(calculator.divide(27, 27), 1);
     });
+
+    test('the calculator throw as ArgumentError returns when dividing by zero',
+        () {
+      final calculator = Calculator();
+      expect(() => calculator.divide(27, 0), throwsArgumentError);
+    });
   });
 }
